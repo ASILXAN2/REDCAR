@@ -168,38 +168,18 @@ export default function Home() {
             {/* Time Slots */}
             <div className="space-y-1 text-xs text-gray-400">
               <div>9 AM</div>
+              <div className='flex gap-3'>9.30 AM<h1 className='text-red-500'>------------------------------</h1></div>
               <div>10 AM</div>
+              <div className='flex gap-3'>10.30 AM<h1 className='text-black'>G1 Driving Course Exam</h1></div>
               <div>11 AM</div>
               <div>12 PM</div>
-              <div>1 PM</div>
+              <div className='flex gap-3'>1.30 AM <h1 className='text-black'>G2 Introduction</h1></div>
               <div>2 PM</div>
               <div>3 PM</div>
               <div>4 PM</div>
               <div>5 PM</div>
             </div>
 
-            {/* Schedule Items */}
-            <div className="space-y-3">
-              <div className="bg-white rounded-xl p-3 relative">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500 rounded-l-xl"></div>
-                <div className="ml-3">
-                  <p className="font-medium text-gray-800 text-sm">G1 Driving Course Exam</p>
-                  <p className="text-xs text-gray-500">10:00 AM</p>
-                  <span className="inline-block mt-1 text-xs bg-red-100 text-red-600 px-2 py-1 rounded">1D Test</span>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-3 relative">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-xl"></div>
-                <div className="ml-3">
-                  <p className="font-medium text-gray-800 text-sm">G2 Introduction</p>
-                  <p className="text-xs text-gray-500">1:30 PM</p>
-                  <span className="inline-block mt-1 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">2G Lesson</span>
-                </div>
-              </div>
-            </div>
-
-            {/* What's Next? Card */}
             <div className="bg-[#FFBF00] rounded-xl p-4 text-center relative overflow-hidden">
               <div className="text-xs text-gray-600 mb-2">What's Next?</div>
               <div className="w-16 h-16 mx-auto mb-3 relative">
