@@ -1,103 +1,218 @@
-import { Car, Clock, Users, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { CheckCircle, Play } from 'lucide-react';
 
-const Home = () => {
-  const courses = [
-    {
-      id: 'g1',
-      title: 'A car is sold at home',
-      description: 'Brand new domestic car, excellent condition. The price is negotiable.',
-      image: 'https://i.pinimg.com/474x/a7/37/96/a73796ec760ddcd7b1a9b15acefc6c19.jpg',
-      totalDuration: 'N/A',
-      inClassInstruction: '2 Hours',
-      inCarInstruction: '0 Hours',
-      seatsLeft: '2 Seats Left',
-      status: 'continue',
-      category: 'graduated'
-    },
-    {
-      id: 'g2',
-      title: 'A car is sold at home',
-      description: 'Brand new domestic car, excellent condition. The price is negotiable.',
-      image: 'https://cdn.homedit.com/wp-content/uploads/2013/02/VARIO-Perfect-Platinum-Plenty-on-the-inside-to-offer.jpg',
-      totalDuration: 'N/A',
-      inClassInstruction: '0 Hours',
-      inCarInstruction: '10 Hours',
-      seatsLeft: '10 Seats Left',
-      status: 'not-eligible',
-      category: 'graduated'
-    },
-    {
-      id: 'sale',
-      title: 'A car is sold at home',
-      description: 'Brand new domestic car, excellent condition. The price is negotiable.',
-      image: 'https://www.baymotorhomes.co.uk/Home-Car%20C63%20exterior.jpg',
-      totalDuration: '',
-      inClassInstruction: '',
-      inCarInstruction: '',
-      seatsLeft: '',
-      status: 'start',
-      category: 'announcement'
-    }
-  ];
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-white p-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-3 gap-6">
+          {/* Left Column */}
+          <div className="col-span-2 space-y-6">
+            {/* Hero Banner */}
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 text-white relative overflow-hidden">
+              <h1 className="text-2xl font-bold mb-2">What is G Driver's License?</h1>
+              <p className="text-blue-100 mb-4">Get a Glimpse of What's Coming Next</p>
+              <button className="bg-white text-blue-600 px-6 py-2 rounded-lg font-medium hover:bg-blue-50">
+                EXPLORE NOW!
+              </button> 
+              <div className="absolute top-4 right-6 text-blue-200 text-sm">Check Your Curriculum</div>
+            </div>
 
-  const CourseCard = ({ course }) => (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow mb-6">
-      <div className="flex">
-        <img src={course.image} alt={course.title} className="w-64 h-40 object-cover" />
-        <div className="flex-1 p-6">
-          <div className="flex items-start justify-between mb-3">
-            <h3 className="text-xl font-semibold text-gray-900">{course.title}</h3>
-            <div className="flex items-center space-x-2">
-              {course.status === 'continue' && (
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center space-x-2 transition-colors">
-                  <span>CONTINUE</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              )}
-              {course.status === 'not-eligible' && (
-                <span className="text-gray-400 font-medium">NOT ELIGIBLE YET</span>
-              )}
-              {course.status === 'start' && (
-                <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium flex items-center space-x-2 transition-colors">
-                  <span>START NOW</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              )}
+            {/* Recommended Course */}
+            <div>
+              <h2 className="text-xl font-bold text-gray-800 mb-4">Recommended Course</h2>
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <div className="flex space-x-4">
+                  <div>
+                    <img className='w-35 h-50 justify-center items-center' src="https://assets.newatlas.com/dims4/default/9985ec6/2147483647/strip/true/crop/2279x1519+0+0/resize/720x480!/format/webp/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F0a%2F23%2F43c22fd74cb3bcd3449b55e68830%2Fbmw-cover-concept-rr.jpg" alt="" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">M1 Motorcycle License Course</h3>
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                      This course is the first step in obtaining a motorcycle license in Ontario, 
+                      focusing on the basics of motorcycle safety and riding skills.
+                    </p>
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-gray-800">20</div>
+                        <div className="text-sm text-gray-600">Hours</div>
+                        <div className="text-xs text-gray-400 flex items-center justify-center mt-1">
+                          <div className="w-3 h-3 rounded-full border border-gray-400 mr-1"></div>
+                          Total Duration
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-gray-800">8</div>
+                        <div className="text-sm text-gray-600">Hours</div>
+                        <div className="text-xs text-gray-400 flex items-center justify-center mt-1">
+                          <div className="w-3 h-3 rounded-full border border-gray-400 mr-1"></div>
+                          In-Class Instruction
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-gray-800">16</div>
+                        <div className="text-sm text-gray-600">Hours</div>
+                        <div className="text-xs text-gray-400 flex items-center justify-center mt-1">
+                          <div className="w-3 h-3 rounded-full border border-gray-400 mr-1"></div>
+                          In-Car Instruction
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-red-500">2</div>
+                        <div className="text-sm text-gray-600">Seats Left</div>
+                        <div className="text-xs text-gray-400 flex items-center justify-center mt-1">
+                          <div className="w-3 h-3 rounded-full border border-gray-400 mr-1"></div>
+                          Availability
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Section */}
+            <div className="grid grid-cols-2 gap-6">
+              {/* Last Session */}
+              <div>
+                <h3 className="font-bold text-gray-800 mb-3">Last Session</h3>
+                <div className="bg-white rounded-xl p-4">
+                  <p className="font-medium text-gray-800 mb-3">G1 Rules of the Road</p>
+                  <div className="text-xs text-gray-500 mb-3">INSTRUCTOR</div>
+                  <div className="flex items-center space-x-2 mb-4">
+                    <div className="flex -space-x-2">
+                      {[1,2,3,4,5].map(i => (
+                        <div key={i} className="w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full border-2 border-white"></div>
+                      ))}
+                      <div className="w-6 h-6 bg-gray-400 rounded-full border-2 border-white flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">+5</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-500">3 Nov, 2023</span>
+                    <button className="text-blue-600 text-sm font-medium flex items-center">
+                      <Play className="w-3 h-3 mr-1" />
+                      REPLAY
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Assignments */}
+              <div>
+                <h3 className="font-bold text-gray-800 mb-3">Assignments</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-4 h-4 text-blue-500 fill-current" />
+                    <span className="text-sm text-gray-700">G1 Practice Exam - All Sections</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-4 h-4 text-blue-500 fill-current" />
+                    <span className="text-sm text-gray-700">Theory for the Road Test</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-4 h-4 text-blue-500 fill-current" />
+                    <span className="text-sm text-gray-700">G1 Rules of the Road Quiz</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-4 h-4 border-2 border-gray-300 rounded-full"></div>
+                    <span className="text-sm text-gray-400">G1 Road Signs Quiz</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="text-gray-700 mb-3">{course.description}</p>
-          {course.totalDuration && (
-            <div className="flex space-x-6 text-sm text-gray-600">
-              <div className="flex items-center space-x-1">
-                <Clock className="w-4 h-4" />
-                <span>{course.totalDuration}</span>
+
+          {/* Right Column */}
+          <div className="space-y-6">
+            {/* Calendar */}
+            <div className="bg-white rounded-xl p-4">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-bold text-gray-800">November 2023</h3>
+                <div className="flex space-x-2">
+                  <button className="p-1 hover:bg-gray-100 rounded">‹</button>
+                  <button className="p-1 hover:bg-gray-100 rounded">›</button>
+                </div>
               </div>
-              <div className="flex items-center space-x-1">
-                <Clock className="w-4 h-4" />
-                <span>{course.inClassInstruction}</span>
+              <div className="grid grid-cols-7 gap-1 text-center text-xs mb-2">
+                <div className="text-gray-500 p-1 font-medium">SUN</div>
+                <div className="text-gray-500 p-1 font-medium">MON</div>
+                <div className="text-gray-500 p-1 font-medium">TUE</div>
+                <div className="text-gray-500 p-1 font-medium">WED</div>
+                <div className="text-gray-500 p-1 font-medium">THU</div>
+                <div className="text-gray-500 p-1 font-medium">FRI</div>
+                <div className="text-gray-500 p-1 font-medium">SAT</div>
               </div>
-              <div className="flex items-center space-x-1">
-                <Car className="w-4 h-4" />
-                <span>{course.inCarInstruction}</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Users className="w-4 h-4" />
-                <span>{course.seatsLeft}</span>
+              <div className="grid grid-cols-7 gap-1 text-center text-sm">
+                {['', '', '', 1, 2, 3, 4].map((day, i) => (
+                  <div key={i} className={`p-2 ${day === 3 ? 'bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto' : 'text-gray-700'}`}>
+                    {day}
+                  </div>
+                ))}
+                {[5, 6, 7, 8, 9, 10, 11].map((day, i) => (
+                  <div key={i} className="p-2 text-gray-700">{day}</div>
+                ))}
+                {[12, 13, 14, 15, 16, 17, 18].map((day, i) => (
+                  <div key={i} className="p-2 text-gray-700">{day}</div>
+                ))}
+                {[19, 20, 21, 22, 23, 24, 25].map((day, i) => (
+                  <div key={i} className="p-2 text-gray-700">{day}</div>
+                ))}
+                {[26, 27, 28, 29, 30, '', ''].map((day, i) => (
+                  <div key={i} className="p-2 text-gray-700">{day}</div>
+                ))}
               </div>
             </div>
-          )}
+
+            {/* Time Slots */}
+            <div className="space-y-1 text-xs text-gray-400">
+              <div>9 AM</div>
+              <div>10 AM</div>
+              <div>11 AM</div>
+              <div>12 PM</div>
+              <div>1 PM</div>
+              <div>2 PM</div>
+              <div>3 PM</div>
+              <div>4 PM</div>
+              <div>5 PM</div>
+            </div>
+
+            {/* Schedule Items */}
+            <div className="space-y-3">
+              <div className="bg-white rounded-xl p-3 relative">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500 rounded-l-xl"></div>
+                <div className="ml-3">
+                  <p className="font-medium text-gray-800 text-sm">G1 Driving Course Exam</p>
+                  <p className="text-xs text-gray-500">10:00 AM</p>
+                  <span className="inline-block mt-1 text-xs bg-red-100 text-red-600 px-2 py-1 rounded">1D Test</span>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-3 relative">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-xl"></div>
+                <div className="ml-3">
+                  <p className="font-medium text-gray-800 text-sm">G2 Introduction</p>
+                  <p className="text-xs text-gray-500">1:30 PM</p>
+                  <span className="inline-block mt-1 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">2G Lesson</span>
+                </div>
+              </div>
+            </div>
+
+            {/* What's Next? Card */}
+            <div className="bg-[#FFBF00] rounded-xl p-4 text-center relative overflow-hidden">
+              <div className="text-xs text-gray-600 mb-2">What's Next?</div>
+              <div className="w-16 h-16 mx-auto mb-3 relative">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center">
+                  <img src="https://img.freepik.com/premium-vector/vector-crossed-checkered-flags-illustration_723554-1216.jpg" alt="" />
+                </div>
+              </div>
+              <h4 className="font-bold text-gray-800 text-lg">Novice Navigator</h4>
+              <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-yellow-500 to-transparent"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
-
-  return (
-    <div className="p-8 bg-gray-50 min-h-screen">
-      {courses.map(course => (
-        <CourseCard key={course.id} course={course} />
-      ))}
-    </div>
-  );
-};
-
-export default Home;
+}
